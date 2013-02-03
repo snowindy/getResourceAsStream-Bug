@@ -10,14 +10,14 @@ public class TestGetResourceAsStreamBug {
     public static void main(String[] args) throws Exception {
 
         byte[] fileBytes = FileUtils.readFileToByteArray(new File(
-                "src/com/github/snowindy/getResourceAsStream/test-short-enc.xml"));
+                "resources/test/xml/test-short-enc.xml"));
 
         printBytes(fileBytes);
 
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 
         InputStream is = TestGetResourceAsStreamBug.class
-                .getResourceAsStream("/com/github/snowindy/getResourceAsStream/test-short-enc.xml");
+                .getResourceAsStream("/test/xml/test-short-enc.xml");
 
         int nRead;
         byte[] data = new byte[16384];
